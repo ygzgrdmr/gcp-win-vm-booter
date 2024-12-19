@@ -26,7 +26,7 @@ This script automates the creation of a bootable disk from a snapshot and sets u
 2. **Startup Script**:
    - Upload the PowerShell script (`setup.ps1`) to a Cloud Storage bucket:
      gsutil cp setup.ps1 gs://your-bucket-name/ 
-   - Also please updated the bucket name on the main.sh file.
+   - Also please updated the bucket name on the main.sh file which is SETUP_SCRIPT parameter.
 
 
 3. **Permissions**:
