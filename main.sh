@@ -56,7 +56,7 @@ else
 fi
 
 log_info "Waiting for the disk creation to complete ($WAIT_TIME seconds)..."
-sleep $WAIT_TIME
+#sleep $WAIT_TIME
 
 # Step 2: Create temporary Windows VM and attach the disk
 log_info "Creating temporary Windows VM and attaching the disk..."
@@ -76,7 +76,7 @@ else
 fi
 
 log_info "Waiting for the temporary VM to start ($WAIT_TIME seconds)..."
-sleep $WAIT_TIME
+#sleep $WAIT_TIME
 
 # Step 3: Add startup script to temporary VM
 log_info "Adding startup script to the temporary VM..."
@@ -101,7 +101,7 @@ else
 fi
 
 log_info "Waiting for the VM to stop ($WAIT_TIME seconds)..."
-sleep $WAIT_TIME
+#sleep $WAIT_TIME
 
 gcloud compute instances detach-disk $TEMP_VM_NAME \
     --disk=$DISK_NAME --zone=$ZONE | tee -a $LOG_FILE
