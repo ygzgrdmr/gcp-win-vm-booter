@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+# Path to the service account key file
+SERVICE_ACCOUNT_KEY="/path/to/your/key.json"
+
 # Logging Functions
 LOG_DIR="$HOME/logs"
 LOG_FILE="$LOG_DIR/vm_setup.log"
@@ -21,7 +25,7 @@ touch $LOG_FILE || log_error "Failed to create the log file: $LOG_FILE"
 log_info "VM Setup Script Starting..."
 
 # Collect inputs from the user
-read -p "Enter the service account name (e.g., my-service-account): " SERVICE_ACCOUNT
+#read -p "Enter the service account name (e.g., my-service-account): " SERVICE_ACCOUNT
 read -p "Enter the snapshot name: " SNAPSHOT_NAME
 read -p "Enter the new disk name: " DISK_NAME
 read -p "Enter the temporary VM name: " TEMP_VM_NAME
@@ -37,7 +41,7 @@ SETUP_SCRIPT="gs://bla-bla/setup.ps1"
 
 # Configure service account
 log_info "Configuring the service account: $SERVICE_ACCOUNT"
-gcloud config set account "$SERVICE_ACCOUNT@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com"
+gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY
 if [[ $? -eq 0 ]]; then
     log_info "Service account successfully configured."
 else
