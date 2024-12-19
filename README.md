@@ -22,6 +22,10 @@ This script automates the creation of a bootable disk from a snapshot and sets u
      gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
          --member="serviceAccount:my-service-account@YOUR_PROJECT_ID.iam.gserviceaccount.com" \
          --role="roles/storage.admin"
+     
+     gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
+         --member="serviceAccount:my-service-account@YOUR_PROJECT_ID.iam.gserviceaccount.com" \
+         --role="roles/iam.serviceAccountUser"
 
 2. **Startup Script**:
    - Upload the PowerShell script (`setup.ps1`) to a Cloud Storage bucket:
