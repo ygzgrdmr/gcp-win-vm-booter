@@ -33,7 +33,7 @@ ZONE=${ZONE:-us-central1-a}  # Default to us-central1-a if no input
 WAIT_TIME=240  # 4 minutes
 
 # Startup Script Path
-SETUP_SCRIPT="gs://script-bucket-windows/setup.ps1"
+SETUP_SCRIPT="gs://bla-bla/setup.ps1"
 
 # Configure service account
 log_info "Configuring the service account: $SERVICE_ACCOUNT"
