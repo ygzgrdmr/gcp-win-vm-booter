@@ -29,7 +29,8 @@ This script automates the creation of a bootable disk from a snapshot and sets u
 
 2. **Startup Script**:
    - Upload the PowerShell script (`setup.ps1`) to a Cloud Storage bucket:
-     gsutil cp setup.ps1 gs://your-bucket-name/ 
+     gsutil cp setup.ps1 gs://your-bucket-name/
+   - Update the servis account key path at: SERVICE_ACCOUNT_KEY="/path/to/your/key.json"
    - Also please updated the bucket name on the main.sh file which is SETUP_SCRIPT parameter.
 
 
@@ -45,7 +46,6 @@ This script automates the creation of a bootable disk from a snapshot and sets u
    ./main.sh
    
 2. **Inputs Required**:
-   - Service account name
    - Snapshot name
    - New disk name
    - Temporary VM name
@@ -63,6 +63,7 @@ You can modify the following parts of the script:
 - **Machine Type**: Adjust the VM type (e.g., `n1-standard-1`) in the `gcloud compute instances create` commands.
 - **Wait Time**: Change the `WAIT_TIME` variable for longer or shorter delays.
 - **Startup Script Path**: Update the `SETUP_SCRIPT` variable to point to a different Cloud Storage bucket or script.
+- **Service Account Key Path**: Update the `SERVICE_ACCOUNT_KEY` variable to point to a your service account key path.
 
 ---
 
