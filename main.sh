@@ -5,7 +5,7 @@
 SERVICE_ACCOUNT_KEY="/path/to/your/key.json"
 
 # Logging Functions
-LOG_DIR="$HOME/logs"
+LOG_DIR="./logs"
 LOG_FILE="$LOG_DIR/vm_setup.log"
 
 # Create a directory for logs
